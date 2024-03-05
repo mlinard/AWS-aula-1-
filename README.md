@@ -2,7 +2,7 @@ Integrantes do grupo:
 Marcello Linard Teixeira RA:10419338
 Gabriel Mason Guerino RA: 10409928
 1. Criar uma instância EC2 na AWS
-Vá até o modulo 4 e crie uma maquina EC2, utilizando red hat e chaves veckey
+Vá até o modulo 4 e crie uma maquina EC2, utilizando red hat e chaves vockey
 2. Vincular a chave SSH do GitHub
 3. Criar e executar o código na instância EC2:
 Conecte-se à sua instância EC2 usando SSH.
