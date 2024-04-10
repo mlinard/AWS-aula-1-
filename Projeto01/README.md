@@ -11,7 +11,7 @@ A primeira linha com número 3, indica que 3 pessoas utilizaram a escada rolante
 O número t_1 indica o momento(em segundos) em que uma pessoa entrou na escada rolante e o d_1 a direção em que está indo. 
 A primeira pessoa entrou no momento 5, a segunda pessoa no momento 7 e a terceira no momento 9. 
 LEMBRANDO que leva 10 segundos para cruzar a escada rolante de uma ponta a outra.
-Detalhe de interpretação: a escada rolante so para quando está vazia. Isso signfica que uma pessoa ao chegar em sequencia no lado oposto, so poderá entrar na escada após esperar esse tempo. Agora ressalto o detalhe que se uma pessoa chegar na escada idependente do momento, e a escada ja estiver se movimentando para o lado desejado, ela poderá entrar imediatamente, mesmo que já houvesse uma pessoa aguarando do outro lado. Logo a pessoa que estava aguardando do lado oposto deverá aguardar 10 segundos a partir do momento que essa ultima pessoa entrou.  
+Detalhe de interpretação: a escada rolante so para quando está vazia. Isso signfica que uma pessoa ao chegar em sequencia no lado oposto, so poderá entrar na escada após esperar esse tempo. Agora ressalto o detalhe que se uma pessoa chegar na escada idependente do momento, e a escada ja estiver se movimentando para o lado desejado, ela poderá entrar imediatamente, mesmo que já houvesse uma pessoa aguardando do outro lado. Logo a pessoa que estava aguardando do lado oposto deverá aguardar 10 segundos a partir do momento que essa ultima pessoa entrou.  
 
 Agora resolvendo o exemplo 2:
 
