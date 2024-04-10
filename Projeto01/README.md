@@ -1,10 +1,10 @@
 INTERPRETAÇÃO DO PROBLEMA 
-Exemplo de entrada 2
-3
-5 0
-7 1
-9 0
-Exemplo de saÍda 2
+Exemplo de entrada 2<br>
+3<br>
+5 0<br>
+7 1<br>
+9 0<br>
+Exemplo de saÍda 2<br>
 29
 
 A primeira linha com número 3, indica que 3 pessoas utilizaram a escada rolante. 
