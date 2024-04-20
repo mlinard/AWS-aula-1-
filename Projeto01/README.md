@@ -3,17 +3,17 @@
 - Gabriel Mason
 
 ## Passo 1: Preparação do Ambiente
-Instalar Git e GCC:
-<Abra o terminal no AWS.>
-<Instale o Git>
-<Instale o GCC>
+Instalar Git e GCC: <br/> 
+Abra o terminal no AWS.  <br/> 
+Instale o Git  <br/> 
+Instale o GCC  <br/> 
 -
 ## Passo 2: Clonagem do Repositório
-<Navegue até o diretório onde você deseja clonar o repositório.>
-<Acesse o diretório clonado.>
+Navegue até o diretório onde você deseja clonar o repositório.  <br/> 
+Acesse o diretório clonado.  <br/> 
 -
 ## Passo 3: Compilação do Programa
-<Compile o programa  usando o GCC.>
+Compile o programa  usando o GCC.  <br/> 
 -
 ## Passo 4: Execução do Programa
 -
