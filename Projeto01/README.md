@@ -3,24 +3,24 @@
 - Gabriel Mason
 
 ## Passo 1: Preparação do Ambiente
-Instalar Git e GCC: <br/> 
-Abra o terminal no AWS.  <br/> 
-Instale o Git  <br/> 
-Instale o GCC  <br/> 
--
+-Instalar Git e GCC: <br/> 
+-Abra o terminal no AWS.  <br/> 
+-Instale o Git  <br/> 
+-Instale o GCC  <br/> 
+
 ## Passo 2: Clonagem do Repositório
-Navegue até o diretório onde você deseja clonar o repositório.  <br/> 
-Acesse o diretório clonado.  <br/> 
--
+-Navegue até o diretório onde você deseja clonar o repositório.  <br/> 
+-Acesse o diretório clonado.  <br/> 
+
 ## Passo 3: Compilação do Programa
-Compile o programa  usando o GCC.  <br/> 
--
+-Compile o programa  usando o GCC.  <br/> 
+
 ## Passo 4: Execução do Programa
--
+
 ## Explicação Detalhada da Solução com Threads e Processos
 Contexto do Problema:
 O problema da escada rolante envolve gerenciar o fluxo de passageiros que desejam usar uma escada rolante em direções possivelmente opostas. A complexidade surge na necessidade de trocar a direção da escada rolante eficientemente, minimizando o tempo de espera dos passageiros.
--
+
 ### Solução Desenvolvida:
 #### Estrutura de Dados:
 Passageiro: Cada passageiro é representado por uma estrutura contendo informações como o tempo de chegada e a direção desejada (subir ou descer).
