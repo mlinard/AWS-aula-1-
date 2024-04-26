@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define M 4 // Número de linhas da matriz
+#define N 3 // Número de colunas da matriz e tamanho do vetor
+
 // A matriz e o vetor que serão multiplicados
-// Suponha que temos uma matriz 4x3
 double matriz[M][N] = {
     {1.0, 2.0, 3.0},  // Primeira linha da matriz
     {4.0, 5.0, 6.0},  // Segunda linha da matriz
@@ -11,14 +13,10 @@ double matriz[M][N] = {
     {10.0, 11.0, 12.0} // Quarta linha da matriz
 };
 
-// Suponha que temos um vetor de tamanho 3
-double vetor[N] = {2.0, 1.0, 3.0}; // Vetor para multiplicar pela matriz
+// Vetor para multiplicar pela matriz
+double vetor[N] = {2.0, 1.0, 3.0};
 
-#define NUM_THREADS M // Número de threads
-
-// A matriz e o vetor que serão multiplicados
-double matriz[M][N] = { /* inicialize a matriz aqui */ };
-double vetor[N] = { /* inicialize o vetor aqui */ };
+// Resultado da multiplicação da matriz pelo vetor
 double resultado[M] = {0};
 
 // Estrutura para passar dados para as threads
@@ -39,12 +37,12 @@ void *multiplicar(void *arg) {
 }
 
 int main() {
-    pthread_t threads[NUM_THREADS];
-    thread_data data[NUM_THREADS];
+    pthread_t threads[M];
+    thread_data data[M];
     int rc;
     
     // Criar threads para realizar a multiplicação
-    for(int i = 0; i < NUM_THREADS; i++) {
+    for(int i = 0; i < M; i++) {
         data[i].row = i;
         rc = pthread_create(&threads[i], NULL, multiplicar, (void *)&data[i]);
         
@@ -55,13 +53,13 @@ int main() {
     }
     
     // Esperar todas as threads terminarem
-    for(int i = 0; i < NUM_THREADS; i++) {
+    for(int i = 0; i < M; i++) {
         pthread_join(threads[i], NULL);
     }
     
     // Imprimir o vetor resultado
     for(int i = 0; i < M; i++) {
-        printf("%f\n", resultado[i]);
+        printf("%.f\n", resultado[i]); // Alterado para imprimir sem casas decimais
     }
     
     pthread_exit(NULL);
