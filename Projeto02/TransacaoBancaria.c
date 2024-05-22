@@ -1,6 +1,5 @@
 #define _GNU_SOURCE
 #include <stdlib.h>
-#include <malloc.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
@@ -20,7 +19,7 @@ conta from, to;
 int valor;
 
 // The child thread will execute this function
-int transferencia(void *arg) {
+void* transferencia(void *arg) {
     pthread_mutex_lock(&from.mutex);   // Lock the from account
     pthread_mutex_lock(&to.mutex);     // Lock the to account
 
@@ -35,24 +34,16 @@ int transferencia(void *arg) {
     printf("Transferência concluída com sucesso!\n");
     printf("Saldo de c1: %d\n", from.saldo);
     printf("Saldo de c2: %d\n", to.saldo);
-    return 0;
+    return NULL;
 }
 
 int main() {
-    void* stack;
-    pid_t pid;
+    pthread_t threads[10];
     int i;
 
     // Initialize the mutexes
     pthread_mutex_init(&from.mutex, NULL);
     pthread_mutex_init(&to.mutex, NULL);
-
-    // Allocate the stack
-    stack = malloc(FIBER_STACK);
-    if (stack == 0) {
-        perror("malloc: could not allocate stack");
-        exit(1);
-    }
 
     // Todas as contas começam com saldo 100
     from.saldo = 100;
@@ -61,20 +52,17 @@ int main() {
     valor = 10;
 
     for (i = 0; i < 10; i++) {
-        // Call the clone system call to create the child thread
-        pid = clone(&transferencia, (char*) stack + FIBER_STACK,
-                    SIGCHLD | CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0);
-        if (pid == -1) {
-            perror("clone");
+        // Create the child thread
+        if (pthread_create(&threads[i], NULL, transferencia, NULL) != 0) {
+            perror("pthread_create");
             exit(2);
         }
     }
 
     // Wait for all child threads to finish
-    while (wait(NULL) > 0);
-
-    // Free the stack
-    free(stack);
+    for (i = 0; i < 10; i++) {
+        pthread_join(threads[i], NULL);
+    }
 
     // Destroy the mutexes
     pthread_mutex_destroy(&from.mutex);
