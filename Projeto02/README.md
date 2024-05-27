@@ -28,7 +28,7 @@ A implementação precisa gerenciar transferências de fundos entre duas contas 
 
 ### Implementação do Código:
 #### Concorrência:
-- A concorrência é gerenciada usando a chamada de sistema `clone` para criar threads que executam a função de transferência.
+- A concorrência é gerenciada usando a chamada de sistema `pthread_create` para criar threads que executam a função de transferência.
 
 #### Sincronização:
 - Mutexes são usados para sincronizar o acesso às contas, garantindo que as transferências sejam feitas de forma atômica e segura.
